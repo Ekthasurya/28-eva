@@ -8,6 +8,7 @@ let container = document.getElementById("container");
 
 
 
+
 let getData = async(url)=>{
     try {
     let res = await fetch(`${url}`);
@@ -41,12 +42,13 @@ let getData = async(url)=>{
 
         let price = document.createElement("h5")
         price.textContent =`Price : ${ele.price}`;
+        price.setAttribute= "id","onePrice";
 
         let addBtn = document.createElement("button")
         addBtn.textContent="Remove"
         addBtn.style.backgroundColor ="orange"
         addBtn.addEventListener("click",()=>{
-              deleteItm()
+              deleteItm(i)
         })
 
         box.append(image,title,brand,category,price,addBtn)
